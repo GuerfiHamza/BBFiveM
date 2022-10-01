@@ -1,9 +1,9 @@
 @extends('dashboard.layouts.app')
 
-@section('title', 'Toutes nos entreprises')
+@section('title', 'Toutes nos Organisations')
 
 @section('content_header')
-    <h1>Les entreprises</h1>
+    <h1>Les Organisations</h1>
 @stop
 
 @section('css')
@@ -15,7 +15,7 @@
     <div class="container grid px-6 mx-auto">
         <div class="flex justify-between items-center">
             <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                Tous les entreprises
+                Tous les Organisations
             </h2>
             <input type="text" placeholder="Recherche" id="search" name="search"
                 class="mb-2 dark:bg-gray-800 dark:text-white border rounded-2xl border-red h-10 px-2 py-2">
@@ -65,7 +65,7 @@
             });
             function fetch_customer_data(query = '') {
                 $.ajax({
-                    url: "{{ route('dashboard-live_search') }}",
+                    url: "{{ route('dashboard-org_search') }}",
                     method: 'GET',
                     data: {
                         query: query

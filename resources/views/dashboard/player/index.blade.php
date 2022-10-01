@@ -38,7 +38,7 @@
                                             <p class="font-semibold">{{ $player->name }}
                                             </p>
                                             <p class="text-xs text-gray-600 dark:text-gray-400">
-                                                SteamHex : {{ $player->license }}
+                                                SteamHex : {{ $player->identifier }}
                                             </p></a>
                                         </div>
                                     </div>

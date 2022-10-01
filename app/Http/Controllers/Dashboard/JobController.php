@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\FiveM\Job;
-use App\Models\FiveM\OrgWeapons;
 use App\Models\FiveM\Player;
 use Illuminate\Http\Request;
 
@@ -26,65 +25,6 @@ class JobController extends Controller
         return view('dashboard.job.job', compact('job'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\FiveM\Job  $jobs
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Job $job)
-    {
-        $weapon = OrgWeapons::where('name', '=', 'society_' . $job->name)
-            ->select('data')
-            ->get();
-        $weapons = [];
-        foreach ($weapon as $wp) {
-            if ($data = $wp->getLoadout()) {
-                $collection = collect(json_decode($wp->data, true))
-                    ->where('name', '!=', 'WEAPON_PETROLCAN')
-                    ->where('name', '!=', 'GADGET_PARACHUTE')
-                    ->where('name', '!=', 'WEAPON_FLASHLIGHT');
-                if ($collection->count()) {
-                    array_push($weapons, $collection->merge(['wp' => $wp]));
-                }
-            }
-        }
-        // dd($wp->getLoadout());
-        $treasories = $job
-            ->getTreasories()
-            ->sortByDesc('created_at')
-            ->take(24 * 30)
-            ->reverse();
-
-        $treasoriesDifference = $job
-            ->getTreasories()
-            ->sortByDesc('created_at')
-            ->take(24 * 30)
-            ->reverse()
-            ->map(function ($item, $key) use ($treasories) {
-                if ($key > 0) {
-                    $item->treasory = $item->treasory - $treasories->get($key - 1)->treasory;
-                } else {
-                    $item->treasory = 0;
-                }
-
-                return $item;
-            });
-
-            // dd($job->members);
-        return view('dashboard.job.show', [
-            'organisation' => $job,
-            'treasoriesDifference' => $treasoriesDifference,
-            'treasories' => $treasories,
-            'wp' => $weapons,
-        ]);
-    }
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\FiveM\Player  $player
-     * @return \Illuminate\Http\Response
-     */
     public function search(Request $request)
     {
         if($request->ajax())

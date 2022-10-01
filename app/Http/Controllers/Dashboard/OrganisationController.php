@@ -4,78 +4,80 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\FiveM\Organisation;
-use App\Models\FiveM\OrgWeapons;
 use Illuminate\Http\Request;
 
 class OrganisationController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+     public function index(Request $request)
     {
-        $organisations = Organisation::paginate(10);
-        return view('dashboard.organisation.index', compact('organisations'));
+        $organisation = Organisation::when($request->has("name"),function($q)use($request){
+            return $q->where("name","like","%".$request->get("name")."%");
+        })->paginate(5);
+        if($request->ajax()){
+            return view('dashboard.organisation.index', compact('organisation'));
+        } 
+        dd($organisation);
+
+        return view('dashboard.organisation.index', compact('organisation'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\FiveM\Organisation  $organisation
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Organisation $organisation)
+    public function search(Request $request)
     {
-        // $org = \DB::connection('fivem')->select('SELECT `data` FROM `datastore_data` WHERE `name`="organisation_'.$organisation->name.'"');
-        //     $weapons = [];
+        if($request->ajax())
+     {
+      $output = '';
+      $query = $request->get('query');
+      if($query != '')
+      {
+       $data = Organisation::where('name', 'like', '%'.$query.'%')
+         ->orWhere('label', 'like', '%'.$query.'%')
+         ->get();
 
-        //     foreach ($org as $organisation) {
-        //         dd($organisation);
+      }
+      else
+      {
+       $data = Organisation::orderBy('name', 'desc')
+         ->get();
+      }
+      $total_row = $data->count();
+      if($total_row > 0)
+      {
+       foreach($data as $row)
+       {
+        $output .= '
+        <tr class="text-gray-700 dark:text-gray-400">
+         <td class="px-4 py-3 text-sm">'.$row->name.'</td>
+         <td class="px-4 py-3 text-sm">'.$row->label.'</a></td>
+         <td class="px-4 py-3 text-sm">'. $row->members->sortByDesc('org_grade')->pluck('name')->first().'</td>
+         <td class="px-4 py-3 text-sm">'.number_format($row->getTreasory(),2) .'$'.'</td>
+        
+        </tr>
+        ';
+       }
+      }
+      else
+      {
+       $output = '
+       <tr>
+        <td align="center" class="px-4 py-3 text-sm text-white" colspan="5">Aucune donnée disponible</td>
+       </tr>
+       ';
+      }
+      $data = array(
+       'table_data'  => $output,
+       'total_data'  => $total_row
+      );
 
-        //         if ($data = $lod) {
-        //             $collection = collect(json_decode($org, true))
-        //                 ->where('name', '!=', 'WEAPON_PETROLCAN')->where('name', '!=', 'GADGET_PARACHUTE')->where('name', '!=', 'WEAPON_FLASHLIGHT');
-
-        //             if ($collection->count()) {
-        //                 array_push($weapons, $collection->merge(['organisation' => $organisation]));
-        //             }
-        //         }
-
-        //     }
-        $weapon = OrgWeapons::where('name', '=', 'organisation_'.$organisation->name)->select('data')
-                        ->get();
-        $weapons = [];
-        foreach ($weapon as $wp) {
-            if ($data = $wp->getLoadout()) {
-                $collection = collect(json_decode($wp->data, true))
-                ->where('name', '!=', 'WEAPON_PETROLCAN')->where('name', '!=', 'GADGET_PARACHUTE')->where('name', '!=', 'WEAPON_FLASHLIGHT');
-
-
-                if ($collection->count()) {
-                    array_push($weapons, $collection->merge(['wp' => $wp]));
-                }
-            }
-        }
-        // dd($wp->getLoadout()->weapons);
-        $treasories = $organisation->getTreasories()->sortByDesc('created_at')->take(24*30)->reverse();
-        $treasoriesDifference = $organisation->getTreasories()->sortByDesc('created_at')->take(24*30)->reverse()->map(function ($item, $key) use ($treasories) {
-            if ($key > 0) {
-                $item->treasory = $item->treasory - $treasories->get($key-1)->treasory;
-            } else {
-                $item->treasory = 0;
-            }
-
-            return $item;
-        });
-        foreach($organisation->vehicules as $v) {
-            if ($v->vehicle_name() == "Véhicule Inconnu") {
-                $test[$v->plate] = $v->informations()->model;
-            }
-        };
-
-        return view('dashboard.organisation.show', compact('organisation','treasories', 'treasoriesDifference','wp'));
+      echo json_encode($data);
+     }
     }
 
+    public function show(){
+
+    }
 }

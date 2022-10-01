@@ -145,12 +145,14 @@ final class Versions
   'vlucas/phpdotenv' => 'v5.3.0@b3eac5c7ac896e52deab4a99068e3f4ab12d9e56',
   'voku/portable-ascii' => '1.5.6@80953678b19901e5165c56752d087fc11526017c',
   'webmozart/assert' => '1.10.0@6964c76c7804814a842473e0c8fd15bab0f18e25',
+  'barryvdh/laravel-debugbar' => 'v3.7.0@3372ed65e6d2039d663ed19aa699956f9d346271',
   'doctrine/instantiator' => '1.4.0@d56bf6102915de5702778fe20f2de3b2fe570b5b',
   'facade/flare-client-php' => '1.8.0@69742118c037f34ee1ef86dc605be4a105d9e984',
   'facade/ignition' => '2.9.0@e7db3b601ce742568b92648818ef903904d20164',
   'fakerphp/faker' => 'v1.14.1@ed22aee8d17c7b396f74a58b1e7fefa4f90d5ef1',
   'filp/whoops' => '2.12.1@c13c0be93cff50f88bbd70827d993026821914dd',
   'laravel/sail' => 'v1.5.0@7f2d520f8c7d6fc0e5e4949c1363f6ddff0ff116',
+  'maximebf/debugbar' => 'v1.18.1@ba0af68dd4316834701ecb30a00ce9604ced3ee9',
   'myclabs/deep-copy' => '1.10.2@776f831124e9c62e1a2c601ecc52e776d8bb7220',
   'nunomaduro/collision' => 'v5.4.0@41b7e9999133d5082700d31a1d0977161df8322a',
   'phar-io/manifest' => '2.0.1@85265efd3af7ba3ca4b2a2c34dbfc5788dd29133',
@@ -185,7 +187,7 @@ final class Versions
   'stefanzweifel/laravel-stats-phploc' => '7.1.0@9c96c5528c294c4ac7620b6ec9d6cee6de1477b1',
   'theseer/tokenizer' => '1.2.0@75a63c33a8577608444246075ea0af0d052e452a',
   'wnx/laravel-stats' => 'v2.5.2@3bb622cb20a8c17d3d8fe9429e02df3f4d43ee81',
-  'laravel/laravel' => 'dev-main@96d2c04691e22c0be585f20fcee657018a58e1c4',
+  'laravel/laravel' => 'dev-main@05163763194641207f078a62b3c693b52570450d',
 );
 
     private function __construct()
