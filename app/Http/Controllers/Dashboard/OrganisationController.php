@@ -15,15 +15,8 @@ class OrganisationController extends Controller
      */
      public function index(Request $request)
     {
-        $organisation = Organisation::when($request->has("name"),function($q)use($request){
-            return $q->where("name","like","%".$request->get("name")."%");
-        })->paginate(5);
-        if($request->ajax()){
-            return view('dashboard.organisation.index', compact('organisation'));
-        } 
-        dd($organisation);
-
-        return view('dashboard.organisation.index', compact('organisation'));
+       
+        return view('dashboard.organisation.index');
     }
 
     public function search(Request $request)
@@ -38,6 +31,7 @@ class OrganisationController extends Controller
          ->orWhere('label', 'like', '%'.$query.'%')
          ->get();
 
+         
       }
       else
       {
@@ -77,7 +71,4 @@ class OrganisationController extends Controller
      }
     }
 
-    public function show(){
-
-    }
 }

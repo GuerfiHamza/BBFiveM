@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.app')
 
-@section('title', 'Toutes nos Organisations')
+@section('title', 'Toutes nos Organisation')
 
 @section('content_header')
     <h1>Les Organisations</h1>

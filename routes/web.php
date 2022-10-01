@@ -73,7 +73,7 @@ Route::middleware(['auth', 'dashboard'])->prefix('dashboard')->name('dashboard-'
         Route::POST('player/jobedit', [ PlayerController::class, 'jobedit'])->name('player.jobedit');
         Route::POST('player/orgedit', [ PlayerController::class, 'orgedit'])->name('player.orgedit');
         Route::get('player/{player}/billings', [PlayerController::class, 'showBillings'])->name('player.show-billings');
-        Route::resource('organisation', OrganisationController::class);
+        Route::get('organisation', [OrganisationController::class, 'index'])->name('organisation.index');
         Route::resource('job', DashboardJobController::class);
         Route::get('jobs/search', [DashboardJobController::class, 'search'])->name('live_search');
         Route::get('organisation/search', [OrganisationController::class, 'search'])->name('org_search');

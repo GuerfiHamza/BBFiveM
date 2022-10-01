@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\FiveM\Job;
 use App\Models\FiveM\Player;
 use Illuminate\Http\Request;
+use App\Models\FiveM\Organisation;
 
 class JobController extends Controller
 {
