@@ -1,0 +1,33 @@
+@import 'components/extends/search-friends'
+
+.search
+    position: fixed
+    top: -100%
+    left: 0
+    z-index: 1030
+    .search-form, .search-result
+        opacity: 0
+        visibility: hidden
+    .search-result
+        height: 0
+        @extend %search-friends-result
+    &.show
+        width: 100vw
+        height: 100vh
+        top: 0
+        @extend %search-friends-show
+        .search-form
+            @extend %search-friends-form
+            max-width: 500px
+            .search-input-container
+                position: relative
+                .search-close
+                    @extend %search-friends-close
+                .search-input
+                    @extend %search-friends-input
+        .search-result.searching
+            height: 80%
+            @extend %search-friends-result-searching
+            animation: opacity1-visibility1 2s forwards
+
+

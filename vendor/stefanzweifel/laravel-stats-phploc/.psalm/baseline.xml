@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="3.13.1@afd8874a9e4562eac42a02de90e42e430c3a1db1">
+  <file src="src/Analyser.php">
+    <FalsableReturnStatement occurrences="1">
+      <code>false</code>
+    </FalsableReturnStatement>
+    <InvalidReturnStatement occurrences="5">
+      <code>$start + 2</code>
+      <code>$start + 1</code>
+      <code>$start - 2</code>
+      <code>$start - 1</code>
+      <code>$previousTokenIndex</code>
+    </InvalidReturnStatement>
+    <InvalidReturnType occurrences="3">
+      <code>bool</code>
+      <code>bool</code>
+      <code>bool</code>
+    </InvalidReturnType>
+    <InvalidScalarArgument occurrences="2">
+      <code>$next</code>
+      <code>$n</code>
+    </InvalidScalarArgument>
+    <MissingReturnType occurrences="1">
+      <code>countFiles</code>
+    </MissingReturnType>
+    <MixedArgument occurrences="4">
+      <code>$file</code>
+      <code>$className</code>
+      <code>$tokens[$currentToken][1]</code>
+      <code>$tokens[$currentToken][1]</code>
+    </MixedArgument>
+    <MixedArrayAccess occurrences="11">
+      <code>$tokens[$i + 2][1]</code>
+      <code>$tokens[$j][0]</code>
+      <code>$tokens[$j + 1][1]</code>
+      <code>$tokens[$i + 1][0]</code>
+      <code>$tokens[++$i][1]</code>
+      <code>$tokens[$currentToken][0]</code>
+      <code>$tokens[$currentToken][1]</code>
+      <code>$tokens[$currentToken][1]</code>
+      <code>$tokens[$start + 1][0]</code>
+      <code>$tokens[$start - 1][0]</code>
+      <code>$tokens[$previousTokenIndex][0]</code>
+    </MixedArrayAccess>
+    <MixedArrayOffset occurrences="1">
+      <code>$this-&gt;classes[$parent]</code>
+    </MixedArrayOffset>
+    <MixedAssignment occurrences="5">
+      <code>$file</code>
+      <code>$namespace</code>
+      <code>$className</code>
+      <code>$parent</code>
+      <code>$parent</code>
+    </MixedAssignment>
+    <MixedInferredReturnType occurrences="1">
+      <code>string</code>
+    </MixedInferredReturnType>
+    <MixedMethodCall occurrences="1">
+      <code>toArray</code>
+    </MixedMethodCall>
+    <MixedOperand occurrences="4">
+      <code>$tokens[$j + 1][1]</code>
+      <code>$namespace</code>
+      <code>$className</code>
+      <code>$className</code>
+    </MixedOperand>
+    <MixedReturnStatement occurrences="1">
+      <code>$namespace</code>
+    </MixedReturnStatement>
+    <PossiblyFalseArgument occurrences="3">
+      <code>$namespace</code>
+      <code>$namespace</code>
+      <code>$namespace</code>
+    </PossiblyFalseArgument>
+    <RedundantCondition occurrences="1">
+      <code>$visibility === T_PRIVATE</code>
+    </RedundantCondition>
+    <RedundantConditionGivenDocblockType occurrences="2">
+      <code>$namespace !== false</code>
+      <code>!$namespaced &amp;&amp; $namespace !== false</code>
+    </RedundantConditionGivenDocblockType>
+    <TypeDoesNotContainType occurrences="2">
+      <code>$block === $functionName</code>
+      <code>$block === $className</code>
+    </TypeDoesNotContainType>
+  </file>
+  <file src="src/CLI/Application.php">
+    <MixedArgument occurrences="1">
+      <code>$result</code>
+    </MixedArgument>
+    <MixedAssignment occurrences="1">
+      <code>$result</code>
+    </MixedAssignment>
+  </file>
+  <file src="src/CLI/Arguments.php">
+    <MixedPropertyTypeCoercion occurrences="3">
+      <code>$directories</code>
+      <code>$suffixes</code>
+      <code>$exclude</code>
+    </MixedPropertyTypeCoercion>
+  </file>
+  <file src="src/CLI/ArgumentsBuilder.php">
+    <MixedArgument occurrences="4">
+      <code>$directories</code>
+      <code>$csvLogfile</code>
+      <code>$jsonLogfile</code>
+      <code>$xmlLogfile</code>
+    </MixedArgument>
+    <MixedArgumentTypeCoercion occurrences="1">
+      <code>$argv</code>
+    </MixedArgumentTypeCoercion>
+    <MixedArrayAccess occurrences="6">
+      <code>$option[0]</code>
+      <code>$option[1]</code>
+      <code>$option[1]</code>
+      <code>$option[1]</code>
+      <code>$option[1]</code>
+      <code>$option[1]</code>
+    </MixedArrayAccess>
+    <MixedAssignment occurrences="7">
+      <code>$directories</code>
+      <code>$option</code>
+      <code>$suffixes[]</code>
+      <code>$exclude[]</code>
+      <code>$csvLogfile</code>
+      <code>$jsonLogfile</code>
+      <code>$xmlLogfile</code>
+    </MixedAssignment>
+  </file>
+  <file src="src/Collector.php">
+    <MissingParamType occurrences="14">
+      <code>$filename</code>
+      <code>$number</code>
+      <code>$number</code>
+      <code>$name</code>
+      <code>$name</code>
+      <code>$namespace</code>
+      <code>$key</code>
+      <code>$name</code>
+      <code>$key</code>
+      <code>$value</code>
+      <code>$key</code>
+      <code>$number</code>
+      <code>$key</code>
+      <code>$default</code>
+    </MissingParamType>
+    <MissingPropertyType occurrences="6">
+      <code>$counts</code>
+      <code>$currentClassComplexity</code>
+      <code>$currentClassLines</code>
+      <code>$currentMethodComplexity</code>
+      <code>$currentMethodLines</code>
+      <code>$currentNumberOfMethods</code>
+    </MissingPropertyType>
+    <MissingReturnType occurrences="1">
+      <code>getPublisher</code>
+    </MissingReturnType>
+    <MixedArgument occurrences="2">
+      <code>$this-&gt;counts</code>
+      <code>$filename</code>
+    </MixedArgument>
+    <MixedArrayAccess occurrences="3">
+      <code>$this-&gt;counts[$key]</code>
+      <code>$this-&gt;counts[$key]</code>
+      <code>$this-&gt;counts[$key]</code>
+    </MixedArrayAccess>
+    <MixedArrayAssignment occurrences="4">
+      <code>$this-&gt;counts[$key]</code>
+      <code>$this-&gt;counts[$key]</code>
+      <code>$this-&gt;counts[$key]</code>
+      <code>$this-&gt;counts[$key]</code>
+    </MixedArrayAssignment>
+    <MixedArrayOffset occurrences="5">
+      <code>$this-&gt;counts[$key]</code>
+      <code>$this-&gt;counts[$key]</code>
+      <code>$this-&gt;counts[$key]</code>
+      <code>$this-&gt;counts[$key]</code>
+      <code>$this-&gt;counts[$key]</code>
+    </MixedArrayOffset>
+    <MixedOperand occurrences="6">
+      <code>$this-&gt;currentClassComplexity</code>
+      <code>$this-&gt;currentClassLines</code>
+      <code>$this-&gt;currentNumberOfMethods</code>
+      <code>$this-&gt;currentMethodComplexity</code>
+      <code>$this-&gt;currentMethodLines</code>
+      <code>$this-&gt;counts[$key]</code>
+    </MixedOperand>
+  </file>
+  <file src="src/Log/Csv.php">
+    <MissingPropertyType occurrences="1">
+      <code>$colmap</code>
+    </MissingPropertyType>
+    <MixedArgument occurrences="1">
+      <code>$this-&gt;colmap</code>
+    </MixedArgument>
+    <MixedArrayOffset occurrences="1">
+      <code>$count[$key]</code>
+    </MixedArrayOffset>
+    <MixedAssignment occurrences="2">
+      <code>$name</code>
+      <code>$values[]</code>
+    </MixedAssignment>
+  </file>
+  <file src="src/Log/Text.php">
+    <MixedArgument occurrences="88">
+      <code>$count['directories']</code>
+      <code>$count['files']</code>
+      <code>$count['loc']</code>
+      <code>$count['cloc']</code>
+      <code>$count['loc'] &gt; 0 ? ($count['cloc'] / $count['loc']) * 100 : 0</code>
+      <code>$count['ncloc']</code>
+      <code>$count['loc'] &gt; 0 ? ($count['ncloc'] / $count['loc']) * 100 : 0</code>
+      <code>$count['lloc']</code>
+      <code>$count['loc'] &gt; 0 ? ($count['lloc'] / $count['loc']) * 100 : 0</code>
+      <code>$count['llocClasses']</code>
+      <code>$count['lloc'] &gt; 0 ? ($count['llocClasses'] / $count['lloc']) * 100 : 0</code>
+      <code>$count['classLlocAvg']</code>
+      <code>$count['classLlocMin']</code>
+      <code>$count['classLlocMax']</code>
+      <code>$count['methodLlocAvg']</code>
+      <code>$count['methodLlocMin']</code>
+      <code>$count['methodLlocMax']</code>
+      <code>$count['averageMethodsPerClass']</code>
+      <code>$count['minimumMethodsPerClass']</code>
+      <code>$count['maximumMethodsPerClass']</code>
+      <code>$count['llocFunctions']</code>
+      <code>$count['lloc'] &gt; 0 ? ($count['llocFunctions'] / $count['lloc']) * 100 : 0</code>
+      <code>$count['llocByNof']</code>
+      <code>$count['llocGlobal']</code>
+      <code>$count['lloc'] &gt; 0 ? ($count['llocGlobal'] / $count['lloc']) * 100 : 0</code>
+      <code>$count['ccnByLloc']</code>
+      <code>$count['classCcnAvg']</code>
+      <code>$count['classCcnMin']</code>
+      <code>$count['classCcnMax']</code>
+      <code>$count['methodCcnAvg']</code>
+      <code>$count['methodCcnMin']</code>
+      <code>$count['methodCcnMax']</code>
+      <code>$count['globalAccesses']</code>
+      <code>$count['globalConstantAccesses']</code>
+      <code>$count['globalAccesses'] &gt; 0 ? ($count['globalConstantAccesses'] / $count['globalAccesses']) * 100 : 0</code>
+      <code>$count['globalVariableAccesses']</code>
+      <code>$count['globalAccesses'] &gt; 0 ? ($count['globalVariableAccesses'] / $count['globalAccesses']) * 100 : 0</code>
+      <code>$count['superGlobalVariableAccesses']</code>
+      <code>$count['globalAccesses'] &gt; 0 ? ($count['superGlobalVariableAccesses'] / $count['globalAccesses']) * 100 : 0</code>
+      <code>$count['attributeAccesses']</code>
+      <code>$count['instanceAttributeAccesses']</code>
+      <code>$count['attributeAccesses'] &gt; 0 ? ($count['instanceAttributeAccesses'] / $count['attributeAccesses']) * 100 : 0</code>
+      <code>$count['staticAttributeAccesses']</code>
+      <code>$count['attributeAccesses'] &gt; 0 ? ($count['staticAttributeAccesses'] / $count['attributeAccesses']) * 100 : 0</code>
+      <code>$count['methodCalls']</code>
+      <code>$count['instanceMethodCalls']</code>
+      <code>$count['methodCalls'] &gt; 0 ? ($count['instanceMethodCalls'] / $count['methodCalls']) * 100 : 0</code>
+      <code>$count['staticMethodCalls']</code>
+      <code>$count['methodCalls'] &gt; 0 ? ($count['staticMethodCalls'] / $count['methodCalls']) * 100 : 0</code>
+      <code>$count['namespaces']</code>
+      <code>$count['interfaces']</code>
+      <code>$count['traits']</code>
+      <code>$count['classes']</code>
+      <code>$count['abstractClasses']</code>
+      <code>$count['classes'] &gt; 0 ? ($count['abstractClasses'] / $count['classes']) * 100 : 0</code>
+      <code>$count['concreteClasses']</code>
+      <code>$count['classes'] &gt; 0 ? ($count['concreteClasses'] / $count['classes']) * 100 : 0</code>
+      <code>$count['finalClasses']</code>
+      <code>$count['concreteClasses'] &gt; 0 ? ($count['finalClasses'] / $count['concreteClasses']) * 100 : 0</code>
+      <code>$count['nonFinalClasses']</code>
+      <code>$count['concreteClasses'] &gt; 0 ? ($count['nonFinalClasses'] / $count['concreteClasses']) * 100 : 0</code>
+      <code>$count['methods']</code>
+      <code>$count['nonStaticMethods']</code>
+      <code>$count['methods'] &gt; 0 ? ($count['nonStaticMethods'] / $count['methods']) * 100 : 0</code>
+      <code>$count['staticMethods']</code>
+      <code>$count['methods'] &gt; 0 ? ($count['staticMethods'] / $count['methods']) * 100 : 0</code>
+      <code>$count['publicMethods']</code>
+      <code>$count['methods'] &gt; 0 ? ($count['publicMethods'] / $count['methods']) * 100 : 0</code>
+      <code>$count['protectedMethods']</code>
+      <code>$count['methods'] &gt; 0 ? ($count['protectedMethods'] / $count['methods']) * 100 : 0</code>
+      <code>$count['privateMethods']</code>
+      <code>$count['methods'] &gt; 0 ? ($count['privateMethods'] / $count['methods']) * 100 : 0</code>
+      <code>$count['functions']</code>
+      <code>$count['namedFunctions']</code>
+      <code>$count['functions'] &gt; 0 ? ($count['namedFunctions'] / $count['functions']) * 100 : 0</code>
+      <code>$count['anonymousFunctions']</code>
+      <code>$count['functions'] &gt; 0 ? ($count['anonymousFunctions'] / $count['functions']) * 100 : 0</code>
+      <code>$count['constants']</code>
+      <code>$count['globalConstants']</code>
+      <code>$count['constants'] &gt; 0 ? ($count['globalConstants'] / $count['constants']) * 100 : 0</code>
+      <code>$count['classConstants']</code>
+      <code>$count['constants'] &gt; 0 ? ($count['classConstants'] / $count['constants']) * 100 : 0</code>
+      <code>$count['publicClassConstants']</code>
+      <code>$count['classConstants'] &gt; 0 ? ($count['publicClassConstants'] / $count['classConstants']) * 100 : 0</code>
+      <code>$count['nonPublicClassConstants']</code>
+      <code>$count['classConstants'] &gt; 0 ? ($count['nonPublicClassConstants'] / $count['classConstants']) * 100 : 0</code>
+      <code>$count['testClasses']</code>
+      <code>$count['testMethods']</code>
+    </MixedArgument>
+    <MixedOperand occurrences="28">
+      <code>$count['cloc']</code>
+      <code>$count['ncloc']</code>
+      <code>$count['lloc']</code>
+      <code>$count['llocClasses']</code>
+      <code>$count['llocFunctions']</code>
+      <code>$count['llocGlobal']</code>
+      <code>$count['globalConstantAccesses']</code>
+      <code>$count['globalVariableAccesses']</code>
+      <code>$count['superGlobalVariableAccesses']</code>
+      <code>$count['instanceAttributeAccesses']</code>
+      <code>$count['staticAttributeAccesses']</code>
+      <code>$count['instanceMethodCalls']</code>
+      <code>$count['staticMethodCalls']</code>
+      <code>$count['abstractClasses']</code>
+      <code>$count['concreteClasses']</code>
+      <code>$count['finalClasses']</code>
+      <code>$count['nonFinalClasses']</code>
+      <code>$count['nonStaticMethods']</code>
+      <code>$count['staticMethods']</code>
+      <code>$count['publicMethods']</code>
+      <code>$count['protectedMethods']</code>
+      <code>$count['privateMethods']</code>
+      <code>$count['namedFunctions']</code>
+      <code>$count['anonymousFunctions']</code>
+      <code>$count['globalConstants']</code>
+      <code>$count['classConstants']</code>
+      <code>$count['publicClassConstants']</code>
+      <code>$count['nonPublicClassConstants']</code>
+    </MixedOperand>
+  </file>
+  <file src="src/Log/Xml.php">
+    <MixedArgumentTypeCoercion occurrences="1">
+      <code>$k</code>
+    </MixedArgumentTypeCoercion>
+    <MixedAssignment occurrences="1">
+      <code>$v</code>
+    </MixedAssignment>
+  </file>
+  <file src="src/Publisher.php">
+    <MissingParamType occurrences="9">
+      <code>$key</code>
+      <code>$key</code>
+      <code>$key</code>
+      <code>$key</code>
+      <code>$key</code>
+      <code>$key</code>
+      <code>$default</code>
+      <code>$x</code>
+      <code>$y</code>
+    </MissingParamType>
+    <MissingReturnType occurrences="71">
+      <code>getDirectories</code>
+      <code>getFiles</code>
+      <code>getLines</code>
+      <code>getCommentLines</code>
+      <code>getNonCommentLines</code>
+      <code>getLogicalLines</code>
+      <code>getClassLines</code>
+      <code>getAverageClassLength</code>
+      <code>getMinimumClassLength</code>
+      <code>getMaximumClassLength</code>
+      <code>getAverageMethodLength</code>
+      <code>getMinimumMethodLength</code>
+      <code>getMaximumMethodLength</code>
+      <code>getAverageMethodsPerClass</code>
+      <code>getMinimumMethodsPerClass</code>
+      <code>getMaximumMethodsPerClass</code>
+      <code>getFunctionLines</code>
+      <code>getAverageFunctionLength</code>
+      <code>getNotInClassesOrFunctions</code>
+      <code>getComplexity</code>
+      <code>getMethodComplexity</code>
+      <code>getAverageComplexityPerLogicalLine</code>
+      <code>getAverageComplexityPerClass</code>
+      <code>getMinimumClassComplexity</code>
+      <code>getMaximumClassComplexity</code>
+      <code>getAverageComplexityPerMethod</code>
+      <code>getMinimumMethodComplexity</code>
+      <code>getMaximumMethodComplexity</code>
+      <code>getGlobalAccesses</code>
+      <code>getGlobalConstantAccesses</code>
+      <code>getGlobalVariableAccesses</code>
+      <code>getSuperGlobalVariableAccesses</code>
+      <code>getAttributeAccesses</code>
+      <code>getNonStaticAttributeAccesses</code>
+      <code>getStaticAttributeAccesses</code>
+      <code>getMethodCalls</code>
+      <code>getNonStaticMethodCalls</code>
+      <code>getStaticMethodCalls</code>
+      <code>getNamespaces</code>
+      <code>getInterfaces</code>
+      <code>getTraits</code>
+      <code>getClasses</code>
+      <code>getAbstractClasses</code>
+      <code>getConcreteClasses</code>
+      <code>getFinalClasses</code>
+      <code>getNonFinalClasses</code>
+      <code>getMethods</code>
+      <code>getNonStaticMethods</code>
+      <code>getStaticMethods</code>
+      <code>getPublicMethods</code>
+      <code>getNonPublicMethods</code>
+      <code>getProtectedMethods</code>
+      <code>getPrivateMethods</code>
+      <code>getFunctions</code>
+      <code>getNamedFunctions</code>
+      <code>getAnonymousFunctions</code>
+      <code>getConstants</code>
+      <code>getGlobalConstants</code>
+      <code>getPublicClassConstants</code>
+      <code>getNonPublicClassConstants</code>
+      <code>getClassConstants</code>
+      <code>getTestClasses</code>
+      <code>getTestMethods</code>
+      <code>toArray</code>
+      <code>getAverage</code>
+      <code>getCount</code>
+      <code>getSum</code>
+      <code>getMaximum</code>
+      <code>getMinimum</code>
+      <code>getValue</code>
+      <code>divide</code>
+    </MissingReturnType>
+    <MixedArgument occurrences="6">
+      <code>$this-&gt;getValue('possible constant accesses', [])</code>
+      <code>$this-&gt;getValue('constant', [])</code>
+      <code>$this-&gt;counts[$key]</code>
+      <code>$this-&gt;counts[$key]</code>
+      <code>$this-&gt;counts[$key]</code>
+      <code>$this-&gt;counts[$key]</code>
+    </MixedArgument>
+    <MixedArrayOffset occurrences="5">
+      <code>$this-&gt;counts[$key]</code>
+      <code>$this-&gt;counts[$key]</code>
+      <code>$this-&gt;counts[$key]</code>
+      <code>$this-&gt;counts[$key]</code>
+      <code>$this-&gt;counts[$key]</code>
+    </MixedArrayOffset>
+    <MixedOperand occurrences="14">
+      <code>$this-&gt;getCount('directories')</code>
+      <code>$this-&gt;getLines()</code>
+      <code>$this-&gt;getLogicalLines()</code>
+      <code>$this-&gt;getGlobalConstantAccesses()</code>
+      <code>$this-&gt;getNonStaticAttributeAccesses()</code>
+      <code>$this-&gt;getNonStaticMethodCalls()</code>
+      <code>$this-&gt;getAbstractClasses()</code>
+      <code>$this-&gt;getFinalClasses()</code>
+      <code>$this-&gt;getNonStaticMethods()</code>
+      <code>$this-&gt;getProtectedMethods()</code>
+      <code>$this-&gt;getNamedFunctions()</code>
+      <code>$this-&gt;getGlobalConstants()</code>
+      <code>$this-&gt;getPublicClassConstants()</code>
+      <code>$x</code>
+    </MixedOperand>
+  </file>
+</files>

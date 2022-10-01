@@ -1,0 +1,63 @@
+body
+    height: 100vh
+    width: 100vw
+    overflow-y: auto
+    overflow-x: hidden
+
+ul, li
+    list-style: none
+
+[class *= "ri-"]
+    font-size: inherit
+    line-height: inherit
+    vertical-align: bottom
+    color: $blue-primary
+    padding: 5px
+
+.text-white
+    color: $white
+.text-blue-primary
+    color: $blue-primary
+.text-blue-secondary
+    color: $blue-secondary
+.text-dark-primary
+    color: $dark-primary
+.text-gray-primary
+    color: $gray-primary
+.text-red-primary
+    color: $red-primary
+.bg-white
+    background-color: $white
+.bg-blue-primary
+    background-color: $blue-primary
+.bg-blue-secondary
+    background-color: $blue-secondary
+.bg-dark-primary
+    background-color: $dark-primary
+.bg-gray-primary
+    background-color: $gray-primary
+.bg-red-primary
+    background-color: $red-primary
+.bg-light-gray
+    background-color: rgba($dark-primary, .1)
+    &:hover
+        background-color: rgba($dark-primary, .2)
+
+.line-clamp, .line-clamp-2, .line-clamp-3
+    display: -webkit-box
+    -webkit-line-clamp: 1
+    -webkit-box-orient: vertical  
+    overflow: hidden
+    @at-root .line-clamp-2
+        -webkit-line-clamp: 2
+    @at-root .line-clamp-3
+        -webkit-line-clamp: 3
+
+.stop-scroll
+    height: 100vh
+    overflow: hidden
+
+@keyframes opacity1-visibility1
+    100%
+        opacity: 1
+        visibility: visible

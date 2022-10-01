@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato&family=Open+Sans:wght@400;700&display=swap');
+.bebas {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+.active {
+    background-color: #FF0000;
+}
+.box {
+	@apply
+		min-w-full
+		min-h-full
+}
+
+.text-orange-700 {
+    color: rgb(194 65 12);
+}
+.text-green-700 {
+    color: rgb(21 128 61);
+}
+.text-red-600 {
+    color: rgb(220 38 38);
+}
+.text-gray-600 {
+    color: rgb(75 85 99);
+}

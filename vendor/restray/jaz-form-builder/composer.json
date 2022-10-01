@@ -1,0 +1,24 @@
+{
+    "name": "restray/jaz-form-builder",
+    "description": "Laravel Package for Creating a Drag-and-Drop Form Builder Using JQuery Form Builder",
+    "authors": [
+        {
+            "name": "Jasmine Robinson",
+            "email": "jaz@jazmy.com"
+        }
+    ],
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "restray\\FormBuilder\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "restray\\FormBuilder\\FormBuilderServiceProvider"
+            ]
+        }
+    }
+}
