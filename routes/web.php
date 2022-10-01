@@ -38,8 +38,7 @@ Route::get('logout', function() {
 // Profile
 Route::middleware('auth')->prefix('profile')->group(function() {
     Route::get('profile', [ProfileController::class, 'index'])->name('profile');
-    Route::middleware('auth')->name('bank-')->group(function() {
-});
+
     // Entreprise
     Route::middleware(['player', 'boss'])->prefix('entreprise')->name('entreprise-')->group(function() {
         Route::get('', [ProfileController::class, 'entreprise'])->name('index');
@@ -72,19 +71,11 @@ Route::middleware(['auth', 'dashboard'])->prefix('dashboard')->name('dashboard-'
     Route::middleware('staff')->group(function () {
         Route::resource('billing', BillingController::class);
         Route::get('/accueil',[DashboardIndexController::class, 'index'])->name('index');
-        Route::get('player/weapons',[PlayerController::class, 'getWeapons'])->name('player.weapons');
         Route::resource('player', PlayerController::class);
-        Route::get('player/{vehicule}', [ PlayerController::class, 'delvehicule'])->name('player.delvehicule');
-        Route::POST('player/additem', [ PlayerController::class, 'additem'])->name('player.additem');
         Route::POST('player/jobedit', [ PlayerController::class, 'jobedit'])->name('player.jobedit');
         Route::POST('player/orgedit', [ PlayerController::class, 'orgedit'])->name('player.orgedit');
-        // Route::POST('player/addjob', [ PlayerController::class, 'addjob'])->name('player.addjob');
-        // Route::POST('player/editsecjob', [ PlayerController::class, 'editsecjob'])->name('player.editsecjob');
         Route::get('player/{player}/billings', [PlayerController::class, 'showBillings'])->name('player.show-billings');
-        // Route::resource('doublejob', SecondJobController::class);
         Route::resource('license', LicenseController::class);
-        Route::resource('vehicule', VehiculeController::class);
-        Route::get('vehicules/search', [VehiculeController::class, 'search'])->name('live_search_veh');
         Route::get('entreprises', [EntrepriseController::class, 'index'])->name('entreprise.show');
         Route::resource('organisation', OrganisationController::class);
         Route::resource('job', DashboardJobController::class);

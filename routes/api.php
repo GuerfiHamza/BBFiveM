@@ -15,13 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Static routes
-Route::get('/',  Index::class )->name('index');
-Route::get('/rules', Rules::class)->name('rules');
+// // Static routes
+// Route::get('/',  Index::class )->name('index');
+// Route::get('/rules', Rules::class)->name('rules');
 // Auth
-Route::get('auth/steam', [SteamLoginController::class, 'redirectToSteam'])->name('login');
-Route::get('auth/steam/handle', [SteamLoginController::class, 'handle'])->name('auth.steam.handle');
-Route::get('logout', function() {
-    \Auth::logout();
-    return redirect()->route('index');
-})->middleware('auth')->name('logout');
+// Route::get('auth/steam', [SteamLoginController::class, 'redirectToSteam'])->name('login');
+// Route::get('auth/steam/handle', [SteamLoginController::class, 'handle'])->name('auth.steam.handle');
+// Route::get('logout', function() {
+//     \Auth::logout();
+//     return redirect()->route('index');
+// })->middleware('auth')->name('logout');

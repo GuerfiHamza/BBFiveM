@@ -69,18 +69,5 @@ class Kernel extends HttpKernel
         'player' => \App\Http\Middleware\IsPlayerMiddleware::class,
         'boss' => \App\Http\Middleware\IsBossMiddleware::class,
         'org' => \App\Http\Middleware\IsOrgMiddleware::class,
-        'server' => \App\Http\Middleware\ServerMiddleware::class,
-        'lspd' => \App\Http\Middleware\LSPDMiddleware::class,
-        'ems' => \App\Http\Middleware\EMSMiddleware::class,
-        'arm' => \App\Http\Middleware\ArmurierMiddleware::class,
-        'weapons' => \App\Http\Middleware\WeaponsMiddleware::class,
-        'va' => \App\Http\Middleware\VAMiddleware::class,
-        'banker' => \App\Http\Middleware\BankerMiddleware::class,
-        'avocat' => \App\Http\Middleware\AvocatMiddleware::class,
-        'concessveh' => \App\Http\Middleware\ConcessVehMiddleware::class,
-        'concessmoto' => \App\Http\Middleware\ConcessMMiddleware::class,
-        'immo' => \App\Http\Middleware\ImmoMiddleware::class,
-        'weazel' => \App\Http\Middleware\WeazelMiddleware::class,
-        'boat' => \App\Http\Middleware\BateauMiddleware::class,
     ];
 }
