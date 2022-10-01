@@ -48,8 +48,7 @@ class Player extends Model
         'job_grade',
         'org', // => unemployed, miner,
         'org_grade',
-        'org', // => unorg
-        'ord_grade',
+        
 
         // Server Info
         'lastconnexion', // => Date
@@ -57,11 +56,7 @@ class Player extends Model
         'permission_level',
         'group',
     ];
-    public function Getbanksum()
-    {
-        $bank = json_decode($this->accounts, true);
-        return $bank['bank'];
-    }
+
     public function getUser()
     {
         $users = \App\Models\User::where('steamID', '=', $this->identifier)->get();
@@ -84,14 +79,7 @@ class Player extends Model
     {
         return $this->belongsTo('App\Models\FiveM\JobGrade', 'job_grade');
     }
-    public function job2()
-    {
-        return $this->belongsTo('App\Models\FiveM\Job', 'job2', 'name');
-    }
-    public function job_grade2()
-    {
-        return $this->belongsTo('App\Models\FiveM\JobGrade', 'job_grade2');
-    }
+ 
     public function org()
     {
         return $this->belongsTo('App\Models\FiveM\Organisation', 'org', 'name');
@@ -115,11 +103,6 @@ class Player extends Model
     {
         return $this->hasMany('App\Models\FiveM\VehiculePossessed', 'owner', 'identifier');
     }
-
-    public function licenses()
-    {
-        return $this->hasMany('App\Models\FiveM\License', 'owner', 'identifier');
-    }
     public function billingsender()
     {
         return $this->hasMany('App\Models\FiveM\Billing', 'sender', 'identifier');
@@ -142,19 +125,7 @@ class Player extends Model
         }
         return $this->job()->first();
     }
-    // public function getJob2()
-    // {
-        
-    //     if ($this->job2 == "unemployed2") {
-    //         return null;
-    //     }
-        
-    //     return $this->job2()->first();
-    // }
-    public function bank()
-    {
-        return $this->belongsTo('App\Models\FiveM\BankSaving', 'owner', 'identifier');
-    }
+
     public function higherGrade()
     {
         return $this->grades->sortByDesc('grade')->first();
@@ -180,18 +151,7 @@ class Player extends Model
         return null;
     }
   
-    public function getJobGrade2()
-    {
-        
 
-        $grades = \App\Models\FiveM\JobGrade::where('job_name', '=', $this->job2)->where('grade', '=', $this->job_grade2)->get();
-
-        if ($grades->count() > 0) {
-            return $grades->first();
-        }
-
-        return null;
-    }
     public function getOrgGrade()
     {
         if ($this->org == "unorg") {
@@ -213,14 +173,6 @@ class Player extends Model
                 return $job->higherGrade()->id == $this->getJobGrade()->id;
         }
         return false;
-    }
-    public function isEms()
-    {
-        if ($job = $this->getJob()) {
-            if ($job == "amublance") {
-                return true;
-            }
-        }
     }
     public function isOrgBoss()
     {
@@ -278,38 +230,6 @@ class Player extends Model
         return $faim;
 
     }
-
-    // public function get_Bank()
-    // {
-    //     $informations = $this->accounts();
-    //     $bank = $informations->bank;
-    //     $bank = str_replace('bank', 'Banque', $bank);
-    //     return $bank;   
-
-    // }
-    // public  function get_Money()
-    // {
-    //     $informations = $this->accounts();
-
-    //     $money = $informations->money;
-    //     $money = str_replace('money', 'Argent liquide', $money);
-
-    //     return $money;   
-
-    // }
-    // public function get_black_money()
-    // {
-    //     $informations = $this->accounts();
-    //     $black_money = $informations->black_money;
-    //     $black_money = str_replace('black_money', 'Argent sale', $black_money);
-    //     return $black_money;   
-
-    // }
-
-    // public function accounts()
-    // {
-    //     return json_decode($this->accounts);
-    // }
  
     public function get_phone_number()
     {
@@ -371,13 +291,5 @@ class Player extends Model
         return \App\Models\PlayerTreasory::where('identifier', '=', $this->identifier)->get();
     }
 
-    // public function getBank()
-    // {
-    //     $bank = \DB::connection('fivem')->select('SELECT `bank` FROM `users` WHERE `identifier`="' . $this->identifier . '"');
-    //     if (count($bank)) {
-    //         return $bank[0]->bank;
-    //     }
-
-    //     return 0;
-    // }
+   
 }
